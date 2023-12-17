@@ -10,17 +10,16 @@ The function should use recursion to find the largest item.
 
 def find_largest_item(list_of_items, current, largest):
     if current == -1:
-        print(list_of_items[largest])
-        return
+        return list_of_items[largest]
     if list_of_items[current] > list_of_items[largest]:
-        find_largest_item(list_of_items, current - 1, current)
+        return find_largest_item(list_of_items, current - 1, current)
     else:
-        find_largest_item(list_of_items, current - 1, largest)
+        return find_largest_item(list_of_items, current - 1, largest)
 
 
 def main():
     items = [45, 1, 7, 9, 6, 102, -5, -1, 0, 99]
-    find_largest_item(items, len(items) - 1, 0)
+    print(find_largest_item(items, len(items) - 1, 0))
 
 
 main()
